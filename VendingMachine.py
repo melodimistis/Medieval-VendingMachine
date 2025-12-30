@@ -1,4 +1,4 @@
-from DataItems import coins, usr, items_equipment, items_food
+from DataItems import coins, usr, items_equipment, items_food, items_exp, items_potions
 
 print('Hello Traveler! Welcome to the Medieval Vending Machine.')
 input_ask = input('Can i help you with something today? (I want to buy something/No thanks, maybe next time):').strip().lower()
@@ -19,7 +19,7 @@ else:
 
 while True:
     print('Then, what would you like to buy today? In here, we have Equipment and Food items.')
-    choice_category_item = input('What category would you like to choose? (Equipment/Food/Exit):')
+    choice_category_item = input('What category would you like to choose? (Equipment/Food/Exp/PotionsExit):')
     if choice_category_item == 'Equipment':
         print('Sure! Here the availabe Equipment Items that we have:')
         for key, item in items_equipment.items():
@@ -47,7 +47,39 @@ while True:
             print('You have selected', selected_item.name, ', it will cost you', selected_item.price)
             if usr.coins >= selected_item.price:
                 usr.coins -= selected_item.price
-                print('Thank you for your purchase! Now, you have', usr.coins, 'coins left')
+                print('Thank you for your purchase! Now, you have', usr.coins, 'coins left.')
+            else:
+                print('Sorry, your coins are not enough for this item')
+        else:
+            print('Invalid selection. Please choose a valid item number.')
+            continue
+    elif choice_category_item == 'Exp':
+        print('Sure! Here the availabe Exp Items that we have:')
+        for key, item in items_exp.items():
+            print(f'{key}: {item.name} - {item.price}')
+        selection = input('Select the number of the item you want to buy, Traveler:').strip()
+        if selection in items_exp:
+            selected_item = items_exp[selection]
+            print('You have selected', selected_item.name, ', it will cost you', selected_item.price)
+            if usr.coins >= selected_item.price:
+                usr.coins -= selected_item.price
+                print('Thank you for your purchase! Now, you have', usr.coins, 'coins left.')
+            else:
+                print('Sorry, your coins are not enough for this item')
+        else:
+            print('Invalid selection. Please choose a valid item number.')
+            continue
+    elif choice_category_item == 'Potions':
+        print('Sure! Here the availabe Potions Items that we have:')
+        for key, item in items_potions.items():
+            print(f'{key}: {item.name} - {item.price}')
+        selection = input('Select the number of the item you want to buy, Traveler:').strip()
+        if selection in items_potions:
+            selected_item = items_potions[selection]
+            print('You have selected', selected_item.name, ', it will cost you', selected_item.price)
+            if usr.coins >= selected_item.price:
+                usr.coins -= selected_item.price
+                print('Thank you for your purchase! Now, you have', usr.coins, 'coins left.')
             else:
                 print('Sorry, your coins are not enough for this item')
         else:

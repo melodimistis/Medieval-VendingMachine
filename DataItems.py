@@ -47,3 +47,37 @@ items_food = {
     '11': Food('Raw Beef', 140),
     '12': Food('Cooked Beef', 250),
 }
+
+class Exp:
+    def __init__ (self, name, price):
+        self.name = name
+        self.price = price
+
+items_exp = {
+    '1': Exp('Small Exp Bottle', 120),
+    '2': Exp('Medium Exp Bottle', 230),
+    '3': Exp('Large Exp Bottle', 300),
+    '4': Exp('Skill Exp Bottle', 500),
+    '5': Exp('Extra Skill Exp Bottle', 1300),
+    '6': Exp('Class Exp Bottle', 1500),
+    '7': Exp('Stat Exp Bottle', 3000),
+    '8': Exp('Knowledge Exp Bottle', 4350),
+    '9': Exp('Extra Stat Exp Bottle', 6500),
+}
+
+class Potions:
+    def __init__ (self, name, price):
+        self.name = name
+        self.price = price
+
+items_potions = {
+    '1': Potions('Health Potion', 300),
+    '2': Potions('Mana Potion', 500),
+    '3': Potions('Stamina Potion', 450),
+    '4': Potions('Buff Potion', 500),
+    '5': Potions('Strength Potion', 600),
+    '6': Potions('Defense Potion', 600),
+    '7': Potions('Regen Potion', 300),
+    '8': Potions('Resistance Potion', 1000),
+    '9': Potions('Antidote Potion', 700),
+}
