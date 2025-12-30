@@ -41,4 +41,9 @@ items_food = {
     '5': Food('Chicken Soup', 200),
     '6': Food('Chicken Grilled', 240),
     '7': Food('Mushroom Soup', 120),
+    '8': Food('Corn', 75),
+    '9': Food('Raw Chicken', 100),
+    '10': Food('Cookies (x6)', 35),
+    '11': Food('Raw Beef', 140),
+    '12': Food('Cooked Beef', 250),
 }
